@@ -5,6 +5,7 @@ app.controller("homeCtrl", function($scope,$http) {
   $scope.counties = [];
   $scope.types = [];
   $scope.button_active = false;
+  
   var event_type = 'event_time';
   var search = {};
   var limit = 10;

@@ -14,100 +14,99 @@
 
   if (!empty($decoded["title"])) {
     $title = $decoded["title"];
-    $errors['event_title'] = FALSE;
   }else{
-      $errors['event_title'] = TRUE;
+      $errors['event_title'] = "Missing Title. Please provide one.";
       $error = TRUE;
   }
 
   if (!empty($decoded["description"])) {
     $description = $decoded["description"];
   }else{
-      $errors['event_description'] = TRUE;
+      $errors['event_description'] = "Missing Description. Please provide one.";
       $error = TRUE;
   }
 
   if (!empty($decoded["from"])) {
     $from = $decoded["from"];
   }else{
-      $errors['event_start_date'] = TRUE;
+      $errors['event_start_date'] = "Missing Event Start Date. Please provide one.";
       $error = TRUE;
   }
 
   if (!empty($decoded["to"])) {
     $to = $decoded["to"];
   }else{
-      $errors['event_end_date'] = TRUE;
+      $errors['event_end_date'] = "Missing Event End Date. Please provide one.";
       $error = TRUE;
   }
 
   if (!empty($decoded["url"])) {
     $url = $decoded["url"];
   }else{
-      $errors['event_url'] = TRUE;
+      $errors['event_url'] = "Missing URL. Please provide one.";
       $error = TRUE;
   }
 
   if (!empty($decoded["active"])) {
     $active = $decoded["active"];
   }else{
-      $errors['active'] = TRUE;
+      $errors['active'] = "Missing Active. Please provide one.";
       $error = TRUE;
   }
 
   if (!empty($decoded["type"])) {
     $type = $decoded["type"];
   }else{
-      $errors['type'] = TRUE;
+      $errors['type'] = "Missing Type. Please provide one.";
       $error = TRUE;
   }
 
   if (!empty($decoded["user"])) {
     $user = $decoded["user"];
   }else{
-      $errors['user'] = TRUE;
+      $errors['user'] = "Missing User. Please provide one.";
       $error = TRUE;
   }
 
   if (!empty($decoded["password"])) {
     $password = $decoded["password"];
   }else{
-      $errors['password'] = TRUE;
+      $errors['password'] = "Missing Password. Please provide one.";
       $error = TRUE;
   }
 
   if (!empty($decoded["short_description"])) {
     $s_desc = $decoded["short_description"];
   }else{
-      $errors['short_description'] = TRUE;
+      $errors['short_description'] = "Missing Short Description. Please provide one.";
       $error = TRUE;
   }
 
   if (!empty($decoded["price"])) {
     $price = $decoded["price"];
   }else{
-      $errors['price'] = TRUE;
+      $errors['price'] = "Missing Price. Please provide one.";
       $error = TRUE;
   }
 
   if (!empty($decoded["address"])) {
     $address = $decoded["address"];
   }else{
-      $errors['address'] = TRUE;
+      $errors['address'] = "Missing Address. Please provide one.";
       $error = TRUE;
   }
 
   if (!empty($decoded["county"])) {
     $county = $decoded["county"];
   }else{
-      $errors['county'] = TRUE;
+      $errors['county'] = "Missing County. Please provide one.";
       $error = TRUE;
   }
 
   if (!empty($decoded["town"])) {
     $town = $decoded["town"];
   }else{
-      $errors['town'] = TRUE;
+      $errors['town'] = "Missing Town. Please provide one.";
       $error = TRUE;
   }
 
@@ -132,7 +131,6 @@
       $stmt = $conn->prepare($sql);
 
       $error = $conn->errno . ' ' . $conn->error;
-      echo $error;
 
       $bind_s = "sssssiisssss";
       $bind_p = array($title,$description,$from,$to,$url,$active,$type,$s_desc,$county,$town,$address,$price);

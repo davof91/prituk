@@ -41,7 +41,7 @@ app.controller("createCtrl", function($scope,$http) {
         res = response.data;
         string_resp = ""
         Object.keys(res['information']).forEach(function(key) {
-          string_resp = string_resp + key + ": " +res['information'][key]+'\n';
+          string_resp = string_resp +res['information'][key]+'\n';
         })
         alert(string_resp);
     });
