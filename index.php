@@ -145,7 +145,7 @@
             <div class="card card-body">
               <strong class="d-inline-block mb-2 text-primary">{{event.name}}</strong>
               <h5 class="blog-post-title"><a href="/event.php?id={{event.id}}">{{event.event_title}}</a></h5>
-              <p class="blog-post-meta">Dates: <b>{{event.event_start_date}}</b> to <b>{{event.event_end_date}}</b></p>
+              <p class="blog-post-meta">Dates: <b>{{event.event_start_date}}</b> to <b>{{event.event_end_date}}</b> Town: <b>{{event.town}}</b> <i ng-show="{{event.train}}" class="fa fa-train"></i></p>
               <p ng-repeat="description in split_description(event.short_description)">
                 {{description}}
               </p>

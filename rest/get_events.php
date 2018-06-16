@@ -45,7 +45,7 @@
     $limit = $decoded["limit"];
   }
 
-  $SQL = "SELECT * FROM events as events, (SELECT id as type_id, name as name from types) as t WHERE t.type_id = events.type AND ";
+  $SQL = "SELECT * FROM events as events, (SELECT id as type_id, name as name from types) as t, trains as trains WHERE events.town = trains.town_train AND t.type_id = events.type AND ";
 
   $imploded_sql = "";
   $bind_p = array($bottom,$limit);
