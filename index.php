@@ -7,13 +7,13 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Blog Template for Bootstrap</title>
+    <title>Events & Me Home Page</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+    <link href="/dist/css/fonts.css" rel="stylesheet">
     <link href="/dist/css/blog.css" rel="stylesheet">
     <link href="/dist/css/jquery-ui.css" rel="stylesheet">
     <script src="/dist/js/lib/angular.js"></script>
@@ -83,13 +83,13 @@
           <div id="collapseOne" class="collapse" data-parent="#accordion">
             <div class="card-body">
               <form>
-                <input id="search" type="text" placeholder="Search..." style="width:100%" name="search">
+                <input id="search_m" type="text" placeholder="Search..." style="width:100%" name="search">
               </form>
               <br/>
               <form>
                 <div class="form-group">
-                  <label for="town_select">Select Town (select one):</label>
-                  <select class="form-control" id="town_select">
+                  <label for="town_select_m">Select Town (select one):</label>
+                  <select class="form-control" id="town_select_m">
                     <option></option>
                     <option ng-repeat="town in towns" value="{{town.town}}">{{town.town}}</option>
                   </select>
@@ -97,8 +97,8 @@
               </form>
               <form>
                 <div class="form-group">
-                  <label for="county_select">Select county (select one):</label>
-                  <select class="form-control" id="county_select">
+                  <label for="county_select_m">Select county (select one):</label>
+                  <select class="form-control" id="county_select_m">
                     <option></option>
                     <option ng-repeat="county in counties" value="{{county.county}}">{{county.county}}</option>
                   </select>
@@ -106,16 +106,16 @@
               </form>
               <form>
                 <div class="form-group">
-                  <label for="type_select">Select event type (select one):</label>
-                  <select class="form-control" id="type_select">
+                  <label for="type_select_m">Select event type (select one):</label>
+                  <select class="form-control" id="type_select_m">
                     <option></option>
                     <option ng-repeat="type in types" value="{{type.id}}">{{type.name}}</option>
                   </select>
                 </div>
               </form>
-              <label for="date_pickers">Select Timeframe:</label>
-              <p id="date_pickers"><input type="text" id="datepickerFrom"> to </p>
-              <p><input type="text" id="datepickerTo"></p>
+              <label for="date_pickers_m">Select Timeframe:</label>
+              <p id="date_pickers_m"><input type="text" id="datepickerFrom_m"> to </p>
+              <p><input type="text" id="datepickerTo_m"></p>
               <div class="row">
                 <div class="col-md-4">
                   <button type="button" ng-click="search()" class="btn btn-primary">Submit</button>
@@ -147,7 +147,7 @@
               <h5 class="blog-post-title"><a href="/event.php?id={{event.id}}">{{event.event_title}}</a></h5>
               <p class="blog-post-meta">Dates: <b>{{event.event_start_date}}</b> to <b>{{event.event_end_date}}</b></p>
               <p ng-repeat="description in split_description(event.short_description)">
-                {{event.short_description}}
+                {{description}}
               </p>
               <a href="/event.php?id={{event.id}}">Continue Reading...</a>
             </div><!-- /.blog-post -->
@@ -236,15 +236,14 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="/dist/js/lib/jquery.js"></script>
     <script src="/dist/js/lib/jquery-ui.js"></script>
     <script src="/dist/js/lib/popper.min.js"></script>
     <script src="/dist/js/lib/bootstrap.min.js"></script>
     <script src="/dist/js/lib/holder.min.js"></script>
     <script src="/dist/js/home.js"></script>
-
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
+    <script src="/dist/js/lib/fontawesome.solid.js"></script>
+    <script src="/dist/js/lib/fontawesome.js"></script>
     <script>
       Holder.addTheme('thumb', {
         bg: '#55595c',

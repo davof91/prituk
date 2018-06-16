@@ -21,9 +21,9 @@
     $params = array();
     $string = array();
     if( isset( $param['date1'] ) &&  isset( $param['date2'] )){
-      array_push($query, "(event_start_date BETWEEN ? AND ? OR event_end_date BETWEEN ? AND ?)");
-      array_push($params,$param['date1'],$param['date2'],$param['date1'],$param['date2']);
-      array_push($string, 'ssss');
+      array_push($query, "((event_start_date <= ? AND event_end_date >= ?) OR (event_start_date <= ? AND event_end_date >= ?) OR (event_start_date BETWEEN ? AND ?) OR (event_end_date BETWEEN ? AND ?))");
+      array_push($params,$param['date1'],$param['date1'],$param['date2'],$param['date2'],$param['date1'],$param['date2'],$param['date1'],$param['date2']);
+      array_push($string, 'ssssssss');
     }
     else{
       //echo 'error 1 <br/>';

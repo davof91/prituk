@@ -18,7 +18,7 @@
     <link href="/dist/css/jquery-ui.css" rel="stylesheet">
   </head>
 
-  <body ng-app="prinuk" ng-controller="createCtrl" class="background-pattern" ng-cloak>
+  <body ng-app="prinuk" ng-controller="suggestionCtrl" class="background-pattern" ng-cloak>
 
     <div class="container" ng-cloak style="background-color:white; box-shadow: 10px 10px 10px black;">
       <header class="blog-header py-3">
@@ -45,51 +45,7 @@
       <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8">
-          <div class="row form-group">
-            <label for="title">Title:</label>
-            <input type="text" class="form-control" id="title">
-          </div>
-          <div class="row form-group">
-            <label for="description">Description:</label>
-            <textarea class="form-control" rows="5" id="description"></textarea>
-          </div>
-          <div class="row form-group">
-            <label for="description">Short Description:</label>
-            <textarea class="form-control" rows="5" id="short_description"></textarea>
-          </div>
-          <div class="row form-group">
-            <label for="url">URL:</label>
-            <input type="text" class="form-control" id="url">
-          </div>
-          <div class="row form-group">
-            <label for="active">Active:</label>
-            <input type="text" class="form-control" id="active">
-          </div>
-          <div class="row form-group">
-            <label for="address">Address:</label>
-            <input type="text" class="form-control" id="address">
-          </div>
-          <div class="row form-group">
-            <label for="price">Price:</label>
-            <input type="text" class="form-control" id="price">
-          </div>
-          <div class="row form-group">
-            <label for="town">Town:</label>
-            <input type="text" class="form-control" id="town">
-          </div>
-          <div class="row form-group">
-            <label for="county">County:</label>
-            <input type="text" class="form-control" id="county">
-          </div>
-          <form>
-            <div class="form-group">
-              <label for="type_select">Select event type (select one):</label>
-              <select class="form-control" id="type_select">
-                <option></option>
-                <option ng-repeat="type in types" value="{{type.id}}">{{type.name}}</option>
-              </select>
-            </div>
-          </form>
+
           <div class="row form-group">
             <label for="user">User:</label>
             <input type="text" class="form-control" id="user">
@@ -98,10 +54,26 @@
             <label for="password">Password:</label>
             <input type="text" class="form-control" id="password">
           </div>
-          <label for="date_pickers">Dates:</label>
-          <p id="date_pickers"><input type="text" class="form-control" id="datepickerFrom"> to <input class="form-control" type="text" id="datepickerTo"></p>
-          <button type="submit" class="btn btn-primary" ng-click="submit_data()">Submit</button>
+
         </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+        <h3>Suggestions Submitted</h3>
+        <div class="all_blogs" ng-repeat="suggestion in all_suggestions">
+          <div class="card card-body">
+            <p ng-repeat="description in split_description(suggestion.description)">
+              {{description}}
+            </p>
+            <a href="{{suggestion.url}}">{{suggestion.url}}</a>
+          </div><!-- /.blog-post -->
+          <br/>
+        </div>
+        <button type="submit" class="btn btn-primary" ng-click="get_more_events()">Get More suggestions</button>
+      <div>
+
       </div>
     </main><!-- /.container -->
 
@@ -119,7 +91,7 @@
     <script src="/dist/js/lib/popper.min.js"></script>
     <script src="/dist/js/lib/bootstrap.min.js"></script>
     <script src="/dist/js/lib/holder.min.js"></script>
-    <script src="/dist/js/create_event.js"></script>
+    <script src="/dist/js/suggestions.js"></script>
     <script src="/dist/js/lib/fontawesome.solid.js"></script>
     <script src="/dist/js/lib/fontawesome.js"></script>
     <script>

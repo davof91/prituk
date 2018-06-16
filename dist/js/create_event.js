@@ -18,7 +18,6 @@ app.controller("createCtrl", function($scope,$http) {
   });
 
   $scope.submit_data = function(){
-    console.log('asdads');
     var data = {};
     data['from'] = $( "#datepickerFrom" ).datepicker({ dateFormat: 'yy-mm-dd' }).val();
     data['to'] = $( "#datepickerTo" ).datepicker({ dateFormat: 'yy-mm-dd' }).val();

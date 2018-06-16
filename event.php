@@ -7,13 +7,13 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Blog Template for Bootstrap</title>
+    <title>Events & Me Event Page</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+    <link href="/dist/css/fonts.css" rel="stylesheet">
     <link href="/dist/css/blog.css" rel="stylesheet">
     <link href="/dist/css/jquery-ui.css" rel="stylesheet">
     <script src="/dist/js/lib/angular.js"></script>
@@ -92,16 +92,15 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="/dist/js/lib/jquery.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXT4tuSkbHrpAWriuGrzjH9a75qDFEqPo"></script>
     <script src="/dist/js/lib/jquery-ui.js"></script>
     <script src="/dist/js/lib/popper.min.js"></script>
     <script src="/dist/js/lib/bootstrap.min.js"></script>
     <script src="/dist/js/lib/holder.min.js"></script>
     <script src="/dist/js/event.js"></script>
-
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
+    <script src="/dist/js/lib/fontawesome.solid.js"></script>
+    <script src="/dist/js/lib/fontawesome.js"></script>
     <script>
       Holder.addTheme('thumb', {
         bg: '#55595c',
