@@ -67,8 +67,12 @@
         </div><!-- /.blog-main -->
 
         <aside class="col-md-4 blog-sidebar">
-          <div id="map" style="width:100%;height:200px"></div>
-          <div><b>{{event[0].address}}</b></div><br/>
+          <div ng-repeat="e in event">
+            <div id="map" style="width:100%;height:200px"></div>
+            <div><b>{{e.address}}</b></div><br/>
+            <div ng-show="e.train"><i class="fa fa-train"></i> Train Station Available</div>
+            <br/>
+          </div>
           <h4 class="font-italic">Featured Events!</h4>
           <div class="p-3 mb-3 bg-light rounded" ng-repeat="event in featured_events">
             <h5 class="mb-0">

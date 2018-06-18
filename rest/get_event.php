@@ -18,7 +18,7 @@
   }
 
   else{
-    $SQL = "SELECT * FROM events WHERE id=?";
+    $SQL = "SELECT * FROM events, trains as t WHERE id=? AND t.town_train = events.town";
 
     $stmt = $conn->prepare($SQL);
     $stmt->bind_param("s", $id);
